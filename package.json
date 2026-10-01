@@ -1,0 +1,76 @@
+{
+  "name": "lens-governance",
+  "version": "0.1.0",
+  "description": "See what each service account may do, what admission policies require, and which pods can reach which, and try new policies before you apply them.",
+  "keywords": [
+    "lens-extension"
+  ],
+  "license": "MIT",
+  "author": "Flavius Dinu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flavius-dinu/lens-governance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flavius-dinu/lens-governance/issues"
+  },
+  "homepage": "https://github.com/flavius-dinu/lens-governance#readme",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "lensExtension": {
+    "icon": "assets/icon.svg",
+    "banner": "assets/banner.svg"
+  },
+  "scripts": {
+    "build": "lens-css-module-types src && lens-types-check && lens-package-build --entry-point ./src/index.ts",
+    "clean": "rimraf dist/",
+    "test": "node test/run.mjs"
+  },
+  "dependencies": {
+    "@k8slens/ai-tools-contracts": "^1.0.4",
+    "@k8slens/ask-ai-contracts": "^1.0.2",
+    "@k8slens/badge": "^3.0.0",
+    "@k8slens/cli-contracts": "^1.0.2",
+    "@k8slens/cluster-contracts": "^2.2.0",
+    "@k8slens/command-palette-contracts": "^1.0.2",
+    "@k8slens/details-panel-components": "^1.0.2",
+    "@k8slens/details-panel-contracts": "^1.1.0",
+    "@k8slens/drop-down-menu-items": "^1.1.3",
+    "@k8slens/element-components": "^3.9.0",
+    "@k8slens/feature-core": "^7.5.2",
+    "@k8slens/icon": "^4.0.0",
+    "@k8slens/injectable": "^26.2.1",
+    "@k8slens/input-components": "^1.0.1",
+    "@k8slens/kube-resource-menu-contracts": "^1.0.2",
+    "@k8slens/kubernetes-contracts": "^2.0.2",
+    "@k8slens/main-view-contracts": "^1.3.2",
+    "@k8slens/navigation-contracts": "^1.0.0",
+    "@k8slens/navigator-components": "^1.0.3",
+    "@k8slens/navigator-contracts": "^2.0.2",
+    "@k8slens/notifications-contracts": "^1.0.2",
+    "@k8slens/persistable-contracts": "^1.0.2",
+    "@k8slens/stylesheet-contracts": "^1.0.0",
+    "@k8slens/subscribable": "^1.1.3",
+    "@k8slens/tab-contracts": "^1.2.0",
+    "@k8slens/tabs-components": "^1.0.1",
+    "@k8slens/use-inject": "^1.0.2",
+    "js-yaml": "^4.3.2",
+    "mobx": "^6.15.0",
+    "mobx-react": "^9.2.1",
+    "react": "^19.2.0"
+  },
+  "devDependencies": {
+    "@k8slens/package-build": "^3.0.0",
+    "@k8slens/typescript": "^8.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "rimraf": "^4.4.1"
+  }
+}

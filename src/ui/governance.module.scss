@@ -1,0 +1,409 @@
+// What the $props of @k8slens/element-components do not cover: grids of cells, code, and the
+// reachability diagram. Colours come from the theme variables Lens sets, so both themes work.
+
+.page {
+  height: 100%;
+  overflow: auto;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: calc(var(--unit, 4px) * 4);
+  align-items: start;
+}
+
+.list {
+  max-height: calc(100vh - 300px);
+  overflow: auto;
+}
+
+.listRow {
+  border-left: 3px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--grey80Alpha85);
+  }
+}
+
+.listRowSelected {
+  border-left-color: var(--primary);
+  background: var(--grey80);
+}
+
+.code {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: var(--grey100);
+  color: var(--grey20);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.inlineCode {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  padding: 0 3px;
+  border-radius: 3px;
+  background: var(--grey100);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--grey25);
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--grey60);
+    position: sticky;
+    top: 0;
+    background: var(--grey80);
+    z-index: 1;
+  }
+
+  td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--grey70);
+    vertical-align: top;
+  }
+}
+
+.matrix {
+  border-collapse: separate;
+  border-spacing: 2px;
+  font-size: 12px;
+
+  th {
+    font-weight: 500;
+    color: var(--grey25);
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
+  th.rowHead {
+    text-align: right;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  th.colHead {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: left;
+    max-height: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.cell {
+  width: 26px;
+  height: 22px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 11px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid var(--primary);
+  }
+}
+
+.cellAll {
+  background: var(--success);
+}
+
+.cellSome {
+  background: var(--warning);
+}
+
+.cellNone {
+  background: var(--critical);
+  opacity: 0.85;
+}
+
+.cellEmpty {
+  background: var(--grey70);
+  cursor: default;
+  color: var(--grey25);
+}
+
+.cellSelf {
+  background: var(--grey60);
+  cursor: default;
+}
+
+.permCell {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.permAll {
+  background: var(--success);
+}
+
+.permSome {
+  background: var(--successTint);
+  outline: 1px dashed var(--success);
+  outline-offset: -1px;
+}
+
+.permNone {
+  background: var(--grey70);
+  opacity: 0.5;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--grey70);
+  overflow: hidden;
+  min-width: 120px;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--success);
+}
+
+.barFillWarn {
+  background: var(--warning);
+}
+
+.diagram {
+  width: 100%;
+  max-width: 900px;
+  font-family: inherit;
+
+  text {
+    fill: var(--grey20);
+    font-size: 12px;
+  }
+
+  .muted {
+    fill: var(--grey25);
+    font-size: 11px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .box {
+    fill: var(--grey80);
+    stroke: var(--grey60);
+    stroke-width: 1.5;
+  }
+
+  .boxExternal {
+    fill: var(--grey100);
+    stroke: var(--grey40);
+    stroke-dasharray: 4 3;
+    stroke-width: 1.5;
+  }
+
+  .boxService {
+    fill: var(--grey100);
+    stroke: var(--primary);
+    stroke-width: 1.5;
+  }
+
+  .lineAllowed {
+    stroke: var(--success);
+    stroke-width: 3;
+    fill: none;
+  }
+
+  .lineDenied {
+    stroke: var(--critical);
+    stroke-width: 3;
+    stroke-dasharray: 7 5;
+    fill: none;
+  }
+
+  .lineNeutral {
+    stroke: var(--grey40);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .gateAllowed {
+    fill: var(--success);
+  }
+
+  .gateDenied {
+    fill: var(--critical);
+  }
+
+  .gateNone {
+    fill: var(--grey60);
+  }
+
+  .gateGlyph {
+    fill: white;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .arrowAllowed {
+    fill: var(--success);
+  }
+
+  .arrowDenied {
+    fill: var(--critical);
+  }
+
+  .arrowNeutral {
+    fill: var(--grey40);
+  }
+}
+
+.ruleMatched {
+  border-left: 3px solid var(--success);
+  padding-left: 6px;
+}
+
+.ruleDecided {
+  border-left: 3px solid var(--primary);
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+.ruleDeniedDecided {
+  border-left: 3px solid var(--critical);
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+.ruleIdle {
+  border-left: 3px solid transparent;
+  padding-left: 6px;
+  opacity: 0.75;
+}
+
+// The $width scale stops at 64px, too narrow for any of these boxes.
+.portInput {
+  width: 120px;
+}
+
+.searchBox {
+  width: 360px;
+  max-width: 100%;
+}
+
+.namespaceBox {
+  width: 240px;
+  max-width: 100%;
+}
+
+// The searchable list under a picker: wide enough for pod names, tall enough to browse.
+.pickerPanel {
+  min-width: 260px;
+  width: max-content;
+  max-width: min(720px, 90vw);
+  max-height: min(420px, 60vh);
+  overflow: auto;
+  border: 1px solid var(--grey60);
+  border-radius: 6px;
+}
+
+.pickerSummary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: inherit;
+  border-bottom: 1px solid var(--grey70);
+}
+
+.pickerGroup {
+  border-top: 1px solid var(--grey70);
+}
+
+.pickerRow {
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.pickerRowActive {
+  background: var(--grey70);
+}
+
+.pickerRowCurrent {
+  border-left-color: var(--primary);
+}
+
+// The policy lab: two editors side by side, stacked when the tab is narrow.
+.labEditors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: calc(var(--unit, 4px) * 4);
+  align-items: start;
+}
+
+.yamlEditor,
+.requestEditor {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 8px 10px;
+  border: 1px solid var(--grey60);
+  border-radius: 4px;
+  background: var(--grey100);
+  color: var(--grey20);
+  font-size: 12px;
+  line-height: 1.5;
+
+  &:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+}
+
+.yamlEditor {
+  min-height: 320px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  tab-size: 2;
+  white-space: pre;
+}
+
+.requestEditor {
+  min-height: 64px;
+  font-family: inherit;
+}
+
+// The permissions dashboard: one tile per severity, each a filter of the account list.
+.riskTiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: calc(var(--unit, 4px) * 3);
+}
+
+.riskTile {
+  border: 1px solid var(--grey70);
+  border-radius: 6px;
+  background: var(--grey80);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--grey40);
+  }
+}
+
+.riskTileSelected {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}

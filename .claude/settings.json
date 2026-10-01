@@ -1,0 +1,5 @@
+{
+  "companyAnnouncements": [
+    "Get started for extension development — run /lens-extension-development-ideas for starter prompts, run /lens-extension-development-sync-dependencies after a Lens upgrade to realign package.json with the host's versions, run /lens-extension-development-missing-capability to tell Lens of something the extension surface lacks, run /lens-extension-development-publish to publish the extension through Lens, and consult /Users/fdinu/.k8slens/extensions/extension-development-instructions/README.md for the surfaces this Lens build supports."
+  ]
+}

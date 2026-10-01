@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- The policy lab at work: a draft policy, the verdicts it leads to, and what may reach what. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1726"/>
+      <stop offset="0.55" stop-color="#10294a"/>
+      <stop offset="1" stop-color="#173f6e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3d8bd9" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3d8bd9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/>
+    </pattern>
+    <filter id="lift" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cfe2f7"/>
+    </linearGradient>
+    <linearGradient id="ai" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#3d8bd9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#sky)"/>
+  <rect width="1200" height="600" fill="url(#dots)"/>
+  <ellipse cx="830" cy="300" rx="430" ry="300" fill="url(#glow)"/>
+
+  <!-- Name and promise -->
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <g transform="translate(72 150)">
+      <path fill="url(#shield)" d="M28 0 56 11v22c0 19-12 33.5-28 39C12 66.5 0 52 0 33V11z"/>
+      <path fill="none" stroke="#1f5c99" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="m15 35 9 9 17-18"/>
+    </g>
+    <text x="70" y="282" font-size="62" font-weight="700" fill="#ffffff" letter-spacing="-1">Governance</text>
+    <text x="72" y="326" font-size="25" fill="#b9cde4">Try a policy on your cluster</text>
+    <text x="72" y="358" font-size="25" fill="#b9cde4">before you apply it.</text>
+
+    <g font-size="15" font-weight="600">
+      <rect x="72" y="398" width="122" height="32" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="133" y="419" text-anchor="middle" fill="#dbe7f4">Permissions</text>
+      <rect x="204" y="398" width="108" height="32" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="258" y="419" text-anchor="middle" fill="#dbe7f4">Admission</text>
+      <rect x="72" y="440" width="128" height="32" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.18"/>
+      <text x="136" y="461" text-anchor="middle" fill="#dbe7f4">Reachability</text>
+      <rect x="210" y="440" width="112" height="32" rx="16" fill="#3d8bd9"/>
+      <text x="266" y="461" text-anchor="middle" fill="#ffffff">Policy lab</text>
+    </g>
+  </g>
+
+  <!-- The lab, in a window -->
+  <g filter="url(#lift)">
+    <rect x="488" y="66" width="664" height="468" rx="14" fill="#0e1c2f" stroke="#2c4a6e" stroke-width="1.5"/>
+  </g>
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <circle cx="512" cy="88" r="6" fill="#ff5f57"/>
+    <circle cx="531" cy="88" r="6" fill="#febc2e"/>
+    <circle cx="550" cy="88" r="6" fill="#28c840"/>
+    <text x="576" y="93" font-size="14" fill="#9fb6d1">Policy lab · minikube</text>
+    <line x1="488" y1="108" x2="1152" y2="108" stroke="#2c4a6e" stroke-width="1"/>
+  </g>
+
+  <!-- Draft policy -->
+  <rect x="504" y="122" width="290" height="396" rx="9" fill="#091524" stroke="#1d3554"/>
+  <text x="518" y="144" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#7f98b5" letter-spacing="0.6">DRAFT POLICIES</text>
+  <rect x="505" y="405" width="288" height="22" fill="#e5534b" fill-opacity="0.16"/>
+  <rect x="505" y="405" width="3" height="22" fill="#e5534b"/>
+  <g font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="12.5">
+    <g fill="#4f6886" text-anchor="end">
+      <text x="530" y="171">1</text><text x="530" y="192">2</text><text x="530" y="213">3</text><text x="530" y="234">4</text>
+      <text x="530" y="255">5</text><text x="530" y="276">6</text><text x="530" y="297">7</text><text x="530" y="318">8</text>
+      <text x="530" y="339">9</text><text x="530" y="360">10</text><text x="530" y="381">11</text><text x="530" y="402">12</text>
+      <text x="530" y="423">13</text>
+    </g>
+    <text x="542" y="171"><tspan fill="#8ab4f8">apiVersion</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#c3e88d">kyverno.io/v1</tspan></text>
+    <text x="542" y="192"><tspan fill="#8ab4f8">kind</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#c3e88d">ClusterPolicy</tspan></text>
+    <text x="542" y="213"><tspan fill="#8ab4f8">metadata</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="234" xml:space="preserve"><tspan fill="#8ab4f8">  name</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#c3e88d">pin-images</tspan></text>
+    <text x="542" y="255"><tspan fill="#8ab4f8">spec</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="276" xml:space="preserve"><tspan fill="#8ab4f8">  rules</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="297" xml:space="preserve"><tspan fill="#7f98b5">  - </tspan><tspan fill="#8ab4f8">name</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#c3e88d">no-latest</tspan></text>
+    <text x="542" y="318" xml:space="preserve"><tspan fill="#8ab4f8">    validate</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="339" xml:space="preserve"><tspan fill="#8ab4f8">      failureAction</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#ff9b94">Enforce</tspan></text>
+    <text x="542" y="360" xml:space="preserve"><tspan fill="#8ab4f8">      pattern</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="381" xml:space="preserve"><tspan fill="#8ab4f8">        spec</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="402" xml:space="preserve"><tspan fill="#8ab4f8">          containers</tspan><tspan fill="#7f98b5">:</tspan></text>
+    <text x="542" y="423" xml:space="preserve"><tspan fill="#7f98b5">          - </tspan><tspan fill="#8ab4f8">image</tspan><tspan fill="#7f98b5">: </tspan><tspan fill="#f6c177">"!*:latest"</tspan></text>
+    <rect x="775" y="412" width="2" height="15" fill="#8ab4f8"/>
+  </g>
+
+  <!-- Write with AI -->
+  <rect x="516" y="456" width="266" height="48" rx="10" fill="#10233b" stroke="url(#ai)" stroke-width="1.5"/>
+  <g font-family="Inter, -apple-system, Helvetica, Arial, sans-serif">
+    <path fill="url(#ai)" d="M537 468l2.6 6.4 6.4 2.6-6.4 2.6-2.6 6.4-2.6-6.4-6.4-2.6 6.4-2.6z"/>
+    <text x="554" y="477" font-size="12" font-weight="600" fill="#c9b8ff">Write with AI</text>
+    <text x="554" y="494" font-size="12" fill="#9fb6d1">only the frontend reaches the api</text>
+  </g>
+
+  <!-- Verdicts -->
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <rect x="808" y="122" width="328" height="100" rx="9" fill="#e5534b" fill-opacity="0.08" stroke="#e5534b" stroke-opacity="0.7"/>
+    <rect x="822" y="136" width="84" height="22" rx="5" fill="#e5534b"/>
+    <text x="864" y="151.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff" letter-spacing="0.6">REJECTED</text>
+    <text x="916" y="152" font-size="14" font-weight="600" fill="#e6eef7">Deployment shop/web</text>
+    <text x="822" y="184" font-size="13" fill="#ff9b94">✕  pin-images · no-latest fails</text>
+    <text x="822" y="206" font-family="'JetBrains Mono', 'SF Mono', Menlo, monospace" font-size="11.5" fill="#9fb6d1">image is "nginx:latest"</text>
+
+    <rect x="808" y="234" width="328" height="68" rx="9" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-opacity="0.7"/>
+    <rect x="822" y="248" width="88" height="22" rx="5" fill="#3fb950"/>
+    <text x="866" y="263.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff" letter-spacing="0.6">ADMITTED</text>
+    <text x="920" y="264" font-size="14" font-weight="600" fill="#e6eef7">Deployment shop/api</text>
+    <text x="822" y="290" font-size="13" fill="#8fd19e">✓  every rule that applies is met</text>
+  </g>
+
+  <!-- Reachability -->
+  <rect x="808" y="314" width="328" height="204" rx="9" fill="#091524" stroke="#1d3554"/>
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="822" y="336" font-size="12" font-weight="600" fill="#7f98b5" letter-spacing="0.6">REACHABILITY · TCP 8080</text>
+
+    <path d="M926 383 C 975 383, 975 430, 1018 430" fill="none" stroke="#3fb950" stroke-width="2.5"/>
+    <path d="M926 477 C 975 477, 975 430, 1018 430" fill="none" stroke="#e5534b" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <path d="M1010 424 1020 430 1010 436z" fill="#3fb950"/>
+
+    <rect x="826" y="364" width="100" height="38" rx="8" fill="#13243a" stroke="#3a5a80"/>
+    <text x="876" y="388" text-anchor="middle" font-size="13" font-weight="600" fill="#dbe7f4">frontend</text>
+    <rect x="826" y="458" width="100" height="38" rx="8" fill="#13243a" stroke="#3a5a80"/>
+    <text x="876" y="482" text-anchor="middle" font-size="13" font-weight="600" fill="#dbe7f4">outside</text>
+    <rect x="1020" y="410" width="102" height="40" rx="8" fill="#13243a" stroke="#3d8bd9" stroke-width="1.5"/>
+    <text x="1071" y="435" text-anchor="middle" font-size="13" font-weight="600" fill="#ffffff">api :8080</text>
+
+    <circle cx="968" cy="398" r="11" fill="#3fb950"/>
+    <path d="m962.5 398 4 4 7.5-8" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="968" cy="462" r="11" fill="#e5534b"/>
+    <path d="m963.5 457.5 9 9m0-9-9 9" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- A shield with a check: who may do what, and what is let through, checked. -->
+  <rect width="64" height="64" rx="14" fill="#2f6fae"/>
+  <path fill="#ffffff" d="M32 9 50 16v14c0 12.2-7.6 21.4-18 25-10.4-3.6-18-12.8-18-25V16z"/>
+  <path fill="none" stroke="#2f6fae" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="m23.5 32.5 6 6 11-12"/>
+</svg>
